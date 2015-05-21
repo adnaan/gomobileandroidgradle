@@ -37,9 +37,6 @@ Create a folder "go" in app/src/main. Put your go code here.
 ...
 
 // begin
-sourceSets.main {
-    jni.srcDirs = [] //disable automatic ndk-build call
-}
 task goBuild(type: Exec, description: 'Compile Go NativeActivity lib') {
     commandLine "./src/main/go/make.bash"
 }
