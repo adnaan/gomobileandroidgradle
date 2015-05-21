@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.adnaan.gomobileandroidgradle"
+        minSdkVersion 21
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    // begin
+    task goBuild(type: Exec, description: 'Compile Go NativeActivity lib') {
+        commandLine "./src/main/go/make.bash"
+    }
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn goBuild
+    }
+    //end
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
