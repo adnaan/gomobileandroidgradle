@@ -1,4 +1,4 @@
-A sample Android Studio project with Go's NativeActivity lib.
+A sample Android Studio project integrated with Go's NativeActivity lib.
 
 Used the example: http://godoc.org/golang.org/x/mobile/example/sprite
 
