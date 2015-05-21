@@ -78,7 +78,7 @@ jniLibs is bundled in the final apk by gradle.
  ...
 
  ```
-
- #### Assets
+ 
+#### Assets
 
  Copy your assets in src/main/assets
